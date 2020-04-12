@@ -1,0 +1,22 @@
+interface IPay<P, Q>
+
+    {
+        void Log(P x, Q y);
+    }
+    class Employee<T> : IPay<T, string>
+    {
+        public void Log(T pay, string name) =>
+            Console.WriteLine($"{name}:{pay},类型是{pay.GetType().Name}");
+            }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee<int> p1 = new Employee<int>();
+            p1.Log(30000, "年终奖");
+            Employee<Decimal> P2 = new Employee<Decimal>();
+            P2.Log(54321.67M, "核增绩效");        
+        }
+    }
+}
