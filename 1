@@ -1,0 +1,27 @@
+ class Teacher<T>
+    {
+        public void field(string fieldName, T t)
+        {
+            Console.WriteLine($"{fieldName}:{t},类型是{t.GetType().Name}");
+        }
+    }
+    class Program
+    { 
+
+
+        static void Main(string[] args)
+        {
+            Teacher<String>t1 = new Teacher<String>();
+            t1.field("姓名", "zhao");
+            Teacher<Decimal> t2 = new Teacher<Decimal>();
+            t2.field("工资",8202.34M);
+            Teacher<Boolean> t3 = new Teacher<Boolean>();
+            t3.field("编制", false);
+            Teacher<Single> t4 = new Teacher<Single>();
+           t4.field("评价", 90.23F);
+            Teacher<DateTime> t5 = new Teacher<DateTime>();
+           t5.field("工作日期",DateTime .Parse( "2001/8/31 0:00:00"));
+          
+        }
+    }
+}
